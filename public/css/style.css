@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css);
-/* $border-radius: 20px; */
+
 body {
   color: #333333;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poiret One', Arial, Helvetica, sans-serif;
   max-width: 650px;
   margin: 0 auto;
   padding: 0 16px;
@@ -25,35 +25,49 @@ header {
 }
 
 h2 {
-padding-top: 20px;
+  padding-top: 20px;
   text-align: center;
   font-size: 64px;
   margin-bottom: 16px;
 }
 
-.text{
+.text {
   text-align: center;
   color: gray;
   margin: auto;
   margin-top: 14px;
 }
 
-
 .widget {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: relative;
   display: flex;
   height: 300px;
-  width: 600px;
-  transform: translate(-50%, -50%);
+  max-width: 600px;
+  margin: auto;
   flex-wrap: wrap;
   cursor: pointer;
-  /* border-radius: 20px; */
   box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
 }
 
-.weatherLocation{
+.weatherIcon{
+  flex: 1 100%;
+  height: 60%;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  background: #FAFAFA;
+  font-family: weathericons;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 100px;
+  
+  i{
+    padding-top: 30px;
+  }
+}
+
+
+.weatherLocation {
   display: flex;
   align-items: center;
   width: 100%;
@@ -62,24 +76,26 @@ padding-top: 20px;
   background-color: #fafafa;
 }
 
-.weatherLocation button{
-  background: #080705;
-  color:#fff;
+.weatherLocation button {
+  background: #bb871f; 
+  search button für wetter
+  color: #fff;
   border: 1px solid transparent;
 }
-.weatherLocation input:focus{
-  outline: 0 none;
+
+.weatherLocation input:focus {
+  outline: none;
 }
 
 .widget .weatherInfo {
   flex: 0 0 100%;
   height: 40%;
   background: #080705;
-  
   display: flex;
   align-items: center;
   color: white;
 }
+
 .widget .weatherInfo .temperature {
   flex: 0 0 40%;
   width: 100%;
@@ -87,6 +103,7 @@ padding-top: 20px;
   display: flex;
   justify-content: space-around;
 }
+
 .widget .weatherInfo .description {
   flex: 0 60%;
   display: flex;
@@ -95,14 +112,16 @@ padding-top: 20px;
   height: 100%;
   justify-content: center;
 }
+
 .widget .weatherInfo .description .weatherCondition {
-  /* text-transform: uppercase; */
   font-size: 20px;
   font-weight: 100;
 }
+
 .widget .weatherInfo .description .place {
   font-size: 15px;
 }
+
 .widget .date {
   flex: 100%;
   height: 40%;
@@ -120,8 +139,44 @@ p {
   bottom: 0%;
   right: 2%;
 }
+
 p a {
   text-decoration: none;
   color: #E4D6A7;
   font-size: 10px;
+}
+
+@media screen and (max-width: 680px) {
+  .widget {
+    height: auto;
+    width: 100%;
+    flex-direction: column; /* Um sicherzustellen, dass die Kinder (flex items) untereinander gestapelt werden */
+  }
+
+  h2 {
+    font-size: 48px;
+  }
+
+  .widget .weatherInfo {
+    flex-direction: column;
+    align-items: center; /* Zentriert die Elemente horizontal */
+  }
+
+  .widget .weatherInfo .temperature {
+    flex: 0 0 auto; /* Flexbox-Reset */
+    font-size: 28px;
+    width: 100%;
+    justify-content: center; /* Zentriert den Temperaturtext */
+  }
+
+  .widget .weatherInfo .description {
+    flex: 0 0 auto; /* Flexbox-Reset */
+    width: 100%;
+    align-items: center; /* Zentriert die Beschreibungselemente horizontal */
+  }
+  
+  .widget .date {
+    width: 100%;
+    justify-content: center; /* Zentriert den Datumstext */
+  }
 }
