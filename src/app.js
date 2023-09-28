@@ -20,13 +20,20 @@ hbs.registerPartials(partialsPath);
 app.use(express.static(publicStaticDirPath));
 
 app.get('/', (req, res) => {
-    res.send("Hier kommt die Wetter App hin")
+    res.render('index', { //link to index.hbs -> das wird verlinkt in package.json 
+        title: "Wetter App"
+    })
 })
 
 //localhost:3000/weather?adress=whichCityYouWant
 app.get('/weather', (req, res) => {
     const adress = req.query.adress
-
+    //fehlerausgabe wenn keine stadt eingegeben
+    if (!adress) {
+        return res.send({
+            error: "Bitte gebe bei der Suchleiste eine Stadt ein"
+        })
+    }
     weatherData(adress, (error, {temperature, description, cityName, country}) => {
         if(error){
             return res.send({
