@@ -52,8 +52,8 @@ h2 {
 .weatherIcon{
   flex: 1 100%;
   height: 60%;
-  border-top-left-radius: $border-radius;
-  border-top-right-radius: $border-radius;
+  border-top-left-radius: border-radius;
+  border-top-right-radius: border-radius;
   background: #FAFAFA;
   font-family: weathericons;
   display: flex;
@@ -168,6 +168,14 @@ p a {
     width: 100%;
     justify-content: center; /* Zentriert den Temperaturtext */
   }
+
+  .widget .weatherInfo .windSpeed {
+    flex: 0 0 auto;
+    font-size: 28px;
+    color: white; /* Oder eine andere Farbe, die zu Ihrem Design passt */
+    margin: 0 20px; /* Fügen Sie einen Rand hinzu, um Platz zwischen den Elementen zu lassen */
+  }
+  
 
   .widget .weatherInfo .description {
     flex: 0 0 auto; /* Flexbox-Reset */

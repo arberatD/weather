@@ -33,13 +33,14 @@ app.get('/weather', (req, res) => {
             error: "Bitte gebe bei der Suchleiste eine Stadt ein, sonst geht es nicht weiter"
         })
     }
-    weatherData(address, (error, {temperature, description, cityName} = {}) => {
+    weatherData(address, (error, {temperature, windSpeed, description, cityName} = {}) => {
         if (error) {
             return res.send({ error });
         }
-        console.log(temperature, description, cityName);
+        console.log(temperature, windSpeed, description, cityName);
         res.send({
             temperature,
+            windSpeed,
             description,
             cityName,
                     });

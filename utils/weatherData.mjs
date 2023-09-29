@@ -3,8 +3,16 @@ import request from 'request';
 import constants from '../config.mjs';
 
 const weatherData = (address, callback) => {
-    const url = constants.openWeatherMap.BASE_URL + encodeURIComponent(address) + '&appid=' + constants.openWeatherMap.SECRET_KEY;
+    const url = constants.openWeatherMap.BASE_URL 
+                + encodeURIComponent(address) 
+                + '&lang=de&appid=' 
+                + constants.openWeatherMap.SECRET_KEY;
+
     console.log(url);
+
+// const weatherData = (address, callback) => {
+//     const url = constants.openWeatherMap.BASE_URL + encodeURIComponent(address) + '&appid=' + constants.openWeatherMap.SECRET_KEY;
+//     console.log(url);
 
     request({url, json: true}, (error, {body}) => {
         if (error) {
@@ -14,11 +22,15 @@ const weatherData = (address, callback) => {
         } else {
             callback(undefined, {
                 temperature: body.main.temp,
+                windSpeed:  body.wind.speed,
                 description: body.weather[0].description,
                 cityName: body.name,
+                
+
                             });
         }
     });
+
 }
 
 // Verwenden Sie 'export' anstelle von 'module.exports'
