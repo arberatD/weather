@@ -42,7 +42,7 @@ weatherForm.addEventListener('submit', (event) => {
             } else {
                 locationElement.textContent = 'Stadt: ' + data.cityName.toUpperCase();
                 tempElement.textContent = Math.round(data.temperature - 273.5) + String.fromCharCode(176) + 'C';
-                windElement.textContent = 'Windgeschwindigkeit: ' + Math.round(data.windSpeed) + 'm/s';
+                windElement.textContent = 'Windgeschwindigkeit: ' + Math.round(data.windSpeed) + ' m/s';
                 weatherCondition.textContent = 'Wetterbedingungen: ' + data.description;
                 // humidityElement.textContent = 'Humidity: ' + data.humidity;
                 weatherForm.reset();

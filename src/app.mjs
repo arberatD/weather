@@ -4,6 +4,28 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import weatherData from '../utils/weatherData.mjs';
 
+
+var users = [
+    {
+        username : 
+    }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const app = express();
 const port = 3000;
 
