@@ -5,11 +5,11 @@ import { fileURLToPath } from 'url';
 import weatherData from '../utils/weatherData.mjs';
 
 
-var users = [
-    {
-        username : 
-    }
-]
+// var users = [
+//     {
+//         username : 
+//     }
+// ]
 
 
 
