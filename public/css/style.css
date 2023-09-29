@@ -29,6 +29,7 @@ h2 {
   text-align: center;
   font-size: 64px;
   margin-bottom: 16px;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 .text {
@@ -78,7 +79,7 @@ h2 {
 
 .weatherLocation button {
   background: #bb871f; 
-  search button für wetter
+  /*search button für wetter*/
   color: #fff;
   border: 1px solid transparent;
 }
@@ -89,7 +90,7 @@ h2 {
 
 .widget .weatherInfo {
   flex: 0 0 100%;
-  height: 40%;
+  height: 60%;
   background: #080705;
   display: flex;
   align-items: center;
@@ -97,15 +98,15 @@ h2 {
 }
 
 .widget .weatherInfo .temperature {
-  flex: 0 0 40%;
+  flex: 0 0 30%;
   width: 100%;
-  font-size: 35px;
+  font-size: 30px;
   display: flex;
   justify-content: space-around;
 }
 
 .widget .weatherInfo .description {
-  flex: 0 60%;
+  flex: 0 70%;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -114,12 +115,12 @@ h2 {
 }
 
 .widget .weatherInfo .description .weatherCondition {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 100;
 }
 
 .widget .weatherInfo .description .place {
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .widget .date {
@@ -152,6 +153,33 @@ p a {
     width: 100%;
     flex-direction: column; /* Um sicherzustellen, dass die Kinder (flex items) untereinander gestapelt werden */
   }
+}
+
+  /* Für Geräte mit einer Bildschirmbreite von 600px oder weniger */
+@media screen and (max-width: 600px) {
+  .widget {
+    height: auto;
+    width: 100%;
+    flex-direction: column; 
+  }
+}
+
+/* Für Geräte mit einer Bildschirmbreite von 1024px oder weniger */
+@media screen and (max-width: 1024px) {
+  .widget {
+    height: auto;
+    width: 100%;
+    flex-direction: column; 
+  }
+}
+
+/* Für Geräte mit einer Bildschirmbreite von 1280px oder mehr */
+@media screen and (min-width: 1280px) {
+  .widget {
+    height: auto;
+    width: 100%;
+    flex-direction: column; 
+}
 
   h2 {
     font-size: 48px;
@@ -187,4 +215,9 @@ p a {
     width: 100%;
     justify-content: center; /* Zentriert den Datumstext */
   }
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
 }
