@@ -2,33 +2,61 @@
 <html>
     <head>
         <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Ermöglicht eine reaktionsfähige Webdesign-Anpassung für verschiedene Bildschirmgrößen -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <!-- Setzt den Titel der Webseite mit Hilfe von Handlebars-Variablen -->
         <title>{{title}}</title>
-        <link rel="stylesheet" href="css/style.css"/> <!-- static path for public folder is already set in app.js -->
+        
+        <!-- Einbinden der CSS-Datei. Der statische Pfad für das öffentliche Verzeichnis ist bereits in app.js festgelegt -->
+        <link rel="stylesheet" href="css/style.css"/> 
     </head>
     <body>
         <div class="main-content">
-            {{!-- > refers to the partial header - so it will be shown in 404.hbs too 
-            header.hbs from partials folder is linked--}}
+            <!-- Verweist auf das Partial "header". Dies wird auch in 404.hbs angezeigt.
+                 Das header.hbs aus dem Ordner "partials" wird hier eingebunden -->
             {{>header}}
+            
             <article class="widget">
                 <h3 class="text">Bitte gebe hier deine Stadt ein:</h3>
-                <form class="weatherLocation"><input placeholder="location..." type = "text"/><button>Seach</button>
+                
+                <!-- Formular, um den Standort für das Wetter zu suchen -->
+                <form class="weatherLocation">
+                    <input placeholder="location..." type="text"/>
+                    <button>Suchen</button>
                 </form>
-                    <div class="weatherIcon"><i class="wi wi-day-cloudy"></i></div>
-                    <div class="weatherInfo">
+                
+                <!-- Anzeige für das Wetter-Symbol -->
+                <div class="weatherIcon">
+                    <i class="wi wi-day-cloudy"></i>
+                </div>
+                
+                <!-- Container für Wetterinformationen -->
+                <div class="weatherInfo">
+                    <!-- Anzeige für die Temperatur -->
                     <div class="temperature"><span></span></div>
+                    
+                    <!-- Anzeige für die Windgeschwindigkeit -->
                     <div class="windSpeed"></div>
-                    <div class="description">    
+                    
+                    <div class="description">
+                        <!-- Anzeige für die Wetterbedingungen -->
                         <div class="weatherCondition"></div>
-                         <div class="place"></div>    
+                        
+                        <!-- Anzeige für den Standort -->
+                        <div class="place"></div>    
+                        
+                        <!-- Anzeige für die Luftfeuchtigkeit -->
                         <div class="humidity"></div>
                     </div>
                 </div>
+                
+                <!-- Anzeige für das Datum -->
                 <div class="date"></div>
             </article>
         </div>
-        <script src="js/app.mjs"></script> <!-- absolute path -->
+        
+        <!-- Einbindung des Client-seitigen JavaScripts -->
+        <script src="js/app.mjs"></script>
     </body>
 </html>
