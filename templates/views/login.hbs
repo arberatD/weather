@@ -7,12 +7,35 @@
     <link rel="stylesheet" href="style.css"></link>
 </head>
 <body>
-     <form>
-		<input class = "input" type="text" id="username" placeholder="Username">
-		<input class = "input" type="password" id="password" placeholer="Password">
-		<button class = "btn" type="button" onclick="getInfo()">Click Me</button>
-	</form>
 
+    <!-- Login Formular -->
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input class="input" type="text" id="loginUsername" placeholder="Username">
+            <input class="input" type="password" id="loginPassword" placeholder="Password">
+            <!-- Entfernt: onclick="login()" -->
+            <button class="btn" type="button" id="loginBtn">Login</button>
+        </form>
+    </div>
+
+    <!-- Registrierung Formular -->
+    <div class="register-container">
+        <h2>Registrierung</h2>
+        <form id="registerForm">
+            <input class="input" type="text" id="registerUsername" placeholder="Username">
+            <input class="input" type="password" id="registerPassword" placeholder="Password">
+            <!-- Entfernt: onclick="register()" -->
+            <button class="btn" type="button" id="registerBtn">Registrieren</button>
+        </form>
+    </div>
+
+    <!-- Das Skript sollte im öffentlichen Verzeichnis liegen, zum Beispiel in einem "js"-Ordner -->
+    <script src="../../src/app.mjs" type="module"></script>
+    <script>
+        // Das hier ist Ihr neues Inline-Skript zum Hinzufügen von Event-Listenern
+        document.getElementById("loginBtn").addEventListener('click', login);
+        document.getElementById("registerBtn").addEventListener('click', register);
+    </script>
 </body>
-<script src = "../../src/app.mjs" charset="utf-8"></script>
 </html>
